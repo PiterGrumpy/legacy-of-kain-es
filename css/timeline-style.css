@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg-color: #0d1117;
     --card-bg: #161b22;
@@ -7,6 +11,7 @@
     --accent-red: #ff7b72;
     --accent-green: #7ee787;
     --accent-orange: #ffa657;
+    --accent-brown: #a67c52;
     --border-color: #30363d;
 }
 
@@ -67,6 +72,18 @@ h3 {
 .event-card:hover {
     /* transform: translateX(10px); */
     border-color: #8b949e;
+}
+
+/* Las tarjetas de salida (↑) son enlaces a su llegada (↓) */
+.time-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.event-card:target {
+    scroll-margin-top: 20px;
+    box-shadow: 0 0 0 2px var(--accent-yellow);
 }
 
 /* Regla: Eventos deducidos (Amarillo) */
@@ -136,6 +153,11 @@ h3 {
 .dot-orange {
     background-color: var(--accent-orange);
     box-shadow: 0 0 8px var(--accent-orange);
+}
+
+.dot-brown {
+    background-color: var(--accent-brown);
+    box-shadow: 0 0 8px var(--accent-brown);
 }
 
 .legend {

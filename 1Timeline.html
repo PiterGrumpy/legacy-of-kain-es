@@ -18,7 +18,7 @@
             <div class="legend-item"><span style="border-bottom: 2px solid var(--accent-yellow)">Texto amarillo</span>:
                 Eventos que no se
                 muestran o explican de manera explícita pero que podemos deducir con la información disponible.</div>
-            <div class="legend-item"><span class="up">↑</span> : Viaje en el tiempo (Salida) | </div>
+            <div class="legend-item"><span class="up">↑</span> : Viaje en el tiempo (Salida). Haz clic para ir a su llegada. | </div>
             <div class="legend-item"><span class="down">↓</span> : Viaje en el tiempo
                 (Llegada).</div>
             <div class="legend-item"><span class="dot dot-blue"></span> Los viajes en el tiempo conectan el punto de
@@ -119,7 +119,7 @@
                 El Sacerdote de mayor rango militar es Malek, el guardián del Pilar del conflicto y los seis humanos
                 mencionados son su comando más destacado.
             </div>
-            <div class="event-card">
+            <div class="event-card" id="llegada-raziel-espectro">
                 <span class="dot dot-blue"></span><span class="down">↓</span>
                 <strong>Emerge</strong> desde el futuro Raziel Espectro, en busca de respuestas.
             </div>
@@ -189,7 +189,7 @@
 
         <h3>450 años después… 20 años antes del nacimiento de Kain</h3>
         <div class="timeline">
-            <div class="event-card">
+            <div class="event-card" id="llegada-kain-futuro">
                 <span class="dot dot-red"></span><span class="down">↓</span>
                 <strong>Kain emerge</strong> desde 50 años en el futuro huyendo de la batalla contra la Némesis.
             </div>
@@ -208,17 +208,17 @@
                 </p>
 
                 <div class="split-paths">
-                    <div class="path-card">
+                    <a class="path-card time-link" href="#llegada-kain-regreso" title="Ir a la llegada correspondiente">
                         <span class="path-label">Línea Temporal Actual</span>
                         <strong>Derrota: </strong> <span class="dot dot-orange"></span><span class="up">↑</span> Kain es
                         derrotado y acaba huyendo de regreso a la época de la que viene.
-                    </div>
+                    </a>
 
-                    <div class="path-card" style="border-color: #f1e05a;">
+                    <a class="path-card time-link" href="./2Timeline.html" target="_blank" rel="noopener noreferrer" style="border-color: #f1e05a;" title="Abrir la 2ª Línea Temporal en una pestaña nueva">
                         <span class="path-label" style="color: #f1e05a;">Nueva Línea Temporal</span>
                         <strong>Victoria:</strong> Kain consigue vencer, mata a Guillermo y provoca un cambio en la
-                        historia. <span class="vortex-icon">🌀</span>
-                    </div>
+                        historia. <span class="vortex-icon">🌀</span> <span aria-hidden="true">↗</span>
+                    </a>
                 </div>
 
             </div>
@@ -231,7 +231,7 @@
 
         <h3>20 años después… año en que nace Kain</h3>
         <div class="timeline">
-            <div class="event-card">
+            <div class="event-card" id="llegada-raziel-persecucion">
                 <span class="dot dot-green"></span><span class="down">↓</span>
                 <strong>Raziel Espectro emerge</strong> desde el futuro después de perseguir a Kain a través del tiempo.
                 Aparece en la Fortaleza de los Sárafan y es recibido por Moebius.
@@ -291,10 +291,10 @@
                 a Kain. Raziel le explica a Moebius sus intenciones de viajar 500 años al pasado y éste, con gusto,
                 accede a enviarlo.
             </div>
-            <div class="event-card deduced">
+            <a class="event-card deduced time-link" href="#llegada-raziel-espectro" title="Ir a la llegada correspondiente">
                 <span class="dot dot-blue"></span><span class="up">↑</span>
                 <strong>Moebius envía</strong> a Raziel al pasado y se queda en posesión de la Segadora de Almas.
-            </div>
+            </a>
             <div class="event-card deduced">Moebius aprovecha su buena relación con Azimuth, la matriarca del Averno,
                 para custodiar la Segadora de Almas dentro de la Catedral. Aunque ni siquiera Azimuth sabe en qué lugar
                 de la Catedral se encuentra la espada.
@@ -373,12 +373,12 @@
             </div>
             <div class="event-card">La Némesis vence en lo que se conoció como la Batalla de la Última Esperanza.
             </div>
-            <div class="event-card">
+            <a class="event-card time-link" href="#llegada-kain-futuro" title="Ir a la llegada correspondiente">
                 <span class="dot dot-red"></span><span class="up">↑</span><strong> Kain utiliza</strong> el
                 dispositivo de flujo temporal que encontró en la Catedral del Averno para huir de la batalla y
                 de esta manera viaja 50 años al pasado.
-            </div>
-            <div class="event-card">
+            </a>
+            <div class="event-card" id="llegada-kain-regreso">
                 <span class="dot dot-orange"></span><span class="down">↓</span>
                 <strong>Kain regresa</strong> malherido desde el pasado.
             </div>
@@ -516,10 +516,10 @@
             <div class="event-card">Finalmente, Raziel se enfrenta a Kain en el Cronoplasto. Kain consigue huir a través
                 del dispositivo del tiempo y viaja al pasado.
             </div>
-            <div class="event-card">
+            <a class="event-card time-link" href="#llegada-raziel-persecucion" title="Ir a la llegada correspondiente">
                 <span class="dot dot-green"></span><span class="up">↑</span>
                 <strong>Raziel le persigue.</strong> A su llegada al pasado, Moebius le está esperando…
-            </div>
+            </a>
         </div>
     </div>
 

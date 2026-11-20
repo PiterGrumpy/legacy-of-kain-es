@@ -1,1 +1,24 @@
 audios/
+
+# Archivos propios de IA/agentes (configuración, memoria, instrucciones y skills; uso local)
+AGENT.md
+AGENTS.md
+CLAUDE.md
+MEMORY.md
+opencode.json
+opencode.jsonc
+.opencode/
+.claude/
+.agents/
+.cursor/
+.cursorrules
+.github/copilot-instructions.md
+.windsurf/
+.windsurfrules
+.aider*
+.continue/
+.roo/
+.codex/
+.gemini/
+.vscode/mcp.json
+skills/
