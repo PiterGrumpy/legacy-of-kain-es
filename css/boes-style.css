@@ -1,0 +1,72 @@
+
+.child1 {
+    flex: 2 1 0;
+    align-items: center;
+    text-align: center;
+}
+
+.child2 {
+    flex: 3 1 0;
+    align-items: center;
+}
+
+.child3 {
+    flex: 1 1 0;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-parche-download {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.btn-download {
+    background-color: #005bb5;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.patch_version{
+    text-align: left;
+}
+
+.btn-download:hover {
+    background-color: #4da6ff;
+    text-decoration: none;
+    color:aliceblue;
+}
+
+.video1 {
+    flex: 1 1 0;
+    align-items: center; 
+}
+
+.video2 {
+    flex: 1 1 0;
+    align-items: center;
+}
+
+iframe {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+
+}
+@media (max-width: 600px) {
+ .contenido{
+        width: 100%;
+    }
+
+}

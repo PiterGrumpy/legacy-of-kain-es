@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'CaslonAntique';
+  src: url('../fonts/CaslonAntique.ttf') format('truetype');
+  font-weight: 400;
+  /* o 'normal' */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CaslonAntique';
+  src: url('../fonts/CaslonAntique-Bold.ttf') format('truetype');
+  font-weight: 700;
+  /* o 'bold' */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CaslonAntique';
+  src: url('../fonts/CaslonAntique-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Reset y base */
+html,
+body {
+  margin: 0 !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    max-width: none !important;
+    margin: 0 !important;
+}
+p {
+    font-family: 'Trebuchet MS', 'Calibri';
+    margin-block: 1lh;
+}
+a {
+  font-family: 'Trebuchet MS', 'Calibri';
+  text-decoration: none;
+  color: #067ff9;
+}
+a:hover {
+  color: #4da6ff;
+}
+.important_name{
+  color: #067ff9;
+}
+
+/* Contenedor flex vertical que ocupa toda la altura */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header fijo altura 200px y ancho completo */
+header {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  z-index: -1;
+}
+
+header img {
+  max-height: 100px;
+  z-index: 1;
+}
+
+/* Main ocupa todo el espacio disponible restante */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: #eee;
+  position: relative;
+  overflow: visible;
+}
+
+/* Footer ancho completo y fijo abajo */
+footer {
+  flex-shrink: 0;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  /* padding: 1rem; */
+  width: 100%;
+}
+
+.social-links {
+  margin-bottom: 0.5rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4da6ff;
+}
+
+
+
+/* Contenido centrado, 70% ancho y altura completa */
+.contenido {
+    position: relative;
+    height: auto;
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background: #f0f0f0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    align-self: stretch;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.content-section h2 {
+    font-family: 'CaslonAntique', 'Trebuchet MS', 'Calibri';
+    color: #0a2a63;
+}
+
+
+
+.section-title .section-line {
+    flex: 1 !important;
+    height: 2px !important;
+    background-color: #254b8c !important;
+    margin: 0 10px !important;
+    margin-top: 10px !important;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.item-child {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    border-radius: 8px;
+    background: rgb(228, 226, 226);
+    padding: 10px;
+}
+
+
+@media (max-width: 999px) {
+    .item-child {
+        flex-direction: column !important;
+        align-items: center;
+    }
+
+    .child2 {
+        text-align: center;
+    }  
+
+}

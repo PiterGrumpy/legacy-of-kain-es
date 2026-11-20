@@ -1,0 +1,138 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: linear-gradient(135deg, #0d1117, #161b22);
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #c9d1d9;
+    }
+
+    /* 
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 400px);
+      grid-template-rows: repeat(2, 200px);
+      gap: 10px;
+      position: relative;
+    } */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    /* .banner:hover {
+      transform: scale(1.5);
+      z-index: 10;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    } */
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner:not(:has(img)) {
+      color: white;
+      background-color: #3498db;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+
+
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      /* Menos blur */
+      opacity: 0.25;
+      /* Más visibles */
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .glow1 {
+      width: 400px;
+      height: 400px;
+      top: 5%;
+      left: 10%;
+      background: #00ccff;
+    }
+
+    .glow2 {
+      width: 300px;
+      height: 300px;
+      top: 70%;
+      left: 80%;
+      background: #66d9ff;
+    }
+
+    .glow3 {
+      width: 250px;
+      height: 250px;
+      top: 20%;
+      left: 75%;
+      background: #33bbff;
+    }
+
+    .glow4 {
+      width: 200px;
+      height: 200px;
+      top: 85%;
+      left: 15%;
+      background: #00ccff;
+    }
+
+    @media (min-width: 768px) {
+      .banner:hover {
+        transform: scale(1.5);
+        z-index: 10;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+    }

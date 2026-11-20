@@ -1,0 +1,366 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-color: #c9d1d9;
+    --accent-yellow: #f1e05a;
+    --accent-blue: #58a6ff;
+    --accent-red: #ff7b72;
+    --accent-green: #7ee787;
+    --accent-orange: #ffa657;
+    --border-color: #30363d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+h2 {
+    color: var(--accent-blue);
+    border-left: 5px solid var(--accent-blue);
+    padding-left: 15px;
+    margin-top: 50px;
+    background: rgba(88, 166, 255, 0.1);
+}
+
+h3 {
+    color: #8b949e;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Tarjeta de Evento */
+.event-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    /* transform: translateX(10px); */
+    border-color: #8b949e;
+}
+
+/* Regla: Eventos deducidos (Amarillo) */
+.deduced {
+    border-left: 6px solid var(--accent-yellow);
+    background: rgba(241, 224, 90, 0.1);
+}
+
+/* Regla: Eventos Eliminados (Rojo) */
+.deleted {
+    border-left: 6px solid var(--accent-red);
+    background: rgba(241, 90, 90, 0.1);
+}
+.maybe-deleted{
+    border-left: 6px solid var(--accent-orange);
+    background: rgba(241, 188, 90, 0.1);
+}
+
+/* Regla: Eventos nuevos (Verde) */
+.created {
+    border-left: 6px solid var(--accent-green);
+    background: rgba(115, 241, 90, 0.1);
+}
+
+/* Iconografía de Viaje en el Tiempo */
+.time-icon {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+.up {
+    color: var(--accent-green);
+}
+
+/* Salida */
+.down {
+    color: var(--accent-red);
+}
+
+/* Llegada */
+
+/* Puntos de colores para conexiones */
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dot-blue {
+    background-color: var(--accent-blue);
+    box-shadow: 0 0 8px var(--accent-blue);
+}
+
+.dot-red {
+    background-color: var(--accent-red);
+    box-shadow: 0 0 8px var(--accent-red);
+}
+
+.dot-green {
+    background-color: var(--accent-green);
+    box-shadow: 0 0 8px var(--accent-green);
+}
+
+.dot-orange {
+    background-color: var(--accent-orange);
+    box-shadow: 0 0 8px var(--accent-orange);
+}
+
+.legend {
+    background: #21262d;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    border: 1px dashed var(--accent-yellow);
+}
+
+.legend-item{
+    margin-bottom: 8px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.divergence-container {
+    background: linear-gradient(145deg, #1a1a2e, #161b22);
+    border: 2px solid #58a6ff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px 0;
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+    position: relative;
+}
+
+.divergence-container-created {  
+    border: 2px solid #06b91e;  
+    box-shadow: 0 0 20px rgba(88, 255, 110, 0.15);
+}
+
+.divergence-header {
+    text-align: center;
+    color: #58a6ff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.divergence-header-created {
+    color: #06b91e;
+}
+
+.split-paths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+}
+
+/* Línea decorativa de unión */
+.split-paths::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #58a6ff;
+}
+
+/* CONVERGENCIA DE SEGADORAS */
+.path-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.path-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #f1e05a;
+}
+
+.path-label {
+    display: block;
+    font-size: 0.8em;
+    color: #8b949e;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.vortex-icon {
+    font-size: 1.5em;
+    animation: rotate 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .split-paths {
+        grid-template-columns: 1fr;
+    }
+}
+
+.warning-card {
+    background: rgba(255, 166, 0, 0.03); /* Fondo naranja muy sutil */
+    border: 1px dashed #ffa657 !important; /* Borde discontinuo para indicar acotación */
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    box-shadow: inset 0 0 10px rgba(255, 166, 0, 0.05);
+    margin-left: 20px; /* Alineado con las otras cards */
+}
+
+.warning-icon {
+    font-size: 1.5em;
+    filter: drop-shadow(0 0 5px rgba(255, 166, 0, 0.5));
+    flex-shrink: 0;
+}
+
+.warning-content {
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: #e0e0e0;
+}
+
+.warning-card strong {
+    color: #ffa657; /* Resaltado naranja para el título de la advertencia */
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+}
+
+.warning-sample {
+    width: 20px;
+    height: 12px;
+    background: rgba(255, 166, 0, 0.1);
+    border: 1px dashed #ffa657;
+    border-radius: 2px;
+    display: inline-block;
+}
+
+/* Contenedor principal del desplegable */
+.collapsed-timeline {
+    margin: 20px 0 20px 0px; /* Alineado con tus otras cards */
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    background: rgba(165, 163, 163, 0.02);
+    overflow: hidden;
+}
+
+/* La pestaña/botón que el usuario ve */
+.collapsed-timeline summary {
+    padding: 12px 15px;
+    cursor: pointer;
+    background: #311f1f;
+    color: #bbc5d1;
+    font-weight: bold;
+    font-size: 0.9em;
+    list-style: none; /* Quita la flecha por defecto en algunos navegadores */
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.collapsed-timeline-maybe summary {
+    padding: 12px 15px;
+    cursor: pointer;
+    background: #675237;
+    color: #bbc5d1;
+    font-weight: bold;
+    font-size: 0.9em;
+    list-style: none; /* Quita la flecha por defecto en algunos navegadores */
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.collapsed-timeline summary:hover {
+    background: #21262d;
+    color: #b62929;
+}
+
+.collapsed-timeline-maybe summary:hover {
+    background: #21262d;
+    color: #b68229;
+}
+
+/* Icono de flecha personalizada (opcional) */
+.collapsed-timeline summary::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
+
+/* Rotar flecha cuando está abierto */
+.collapsed-timeline[open] summary::before {
+    transform: rotate(90deg);
+}
+
+/* Contenedor interno para las tarjetas */
+.collapsed-content {
+    padding: 10px;
+    border-top: 1px solid #30363d;
+    background: rgba(27, 27, 27, 0.2);
+}
+
+/* Ajuste para que las cards dentro no tengan márgenes excesivos */
+.collapsed-content .event-card {
+    margin-left: 0; /* Ya están dentro del contenedor alineado */
+    opacity: 0.8; /* Efecto visual de "evento pasado/borrado" */
+}

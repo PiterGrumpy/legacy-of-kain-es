@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Línea Temporal Nosgoth</title>
+    <style>
+        body { background: #0d1117; color: #c9d1d9; font-family: sans-serif; padding: 40px; margin: 0; }
+        .container { max-width: 900px; margin: auto; position: relative; border-left: 2px solid #30363d; padding-left: 40px; }
+        
+        /* SVG fijo que cubre todo el fondo */
+        #svg-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; overflow: visible; }
+        
+        h1 { color: #58a6ff; text-align: center; margin-bottom: 50px; }
+        h2 { color: #58a6ff; border-bottom: 1px solid #30363d; margin-top: 60px; }
+        h3 { color: #8b949e; font-size: 0.9em; text-transform: uppercase; }
+
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 15px; margin: 20px 0; position: relative; z-index: 5; }
+        
+        /* Regla: Subrayado amarillo para eventos deducidos */
+        .deduced { border-left: 5px solid #f1e05a !important; background: rgba(241, 224, 90, 0.05); }
+
+        /* Puntos de viaje */
+        .node {
+            position: absolute; left: -57px; top: 50%; transform: translateY(-50%);
+            width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff;
+            display: flex; align-items: center; justify-content: center; font-weight: bold; z-index: 10;
+        }
+        .blue { background: #58a6ff; }  /* Raziel */
+        .red { background: #ff7b72; }   /* Kain */
+        .green { background: #7ee787; } /* Persecución */
+
+          .divergence-container {
+        background: linear-gradient(145deg, #1a1a2e, #161b22);
+        border: 2px solid #58a6ff;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 30px 0;
+        box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+        position: relative;
+    }
+
+    .divergence-header {
+        text-align: center;
+        color: #58a6ff;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .split-paths {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        position: relative;
+    }
+
+    /* Línea decorativa de unión */
+    .split-paths::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: #58a6ff;
+    }
+
+    .path-card {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+    }
+
+    .path-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #f1e05a;
+    }
+
+    .path-label {
+        display: block;
+        font-size: 0.8em;
+        color: #8b949e;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+    .vortex-icon {
+        font-size: 1.5em;
+        animation: rotate 4s linear infinite;
+        display: inline-block;
+    }
+
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 600px) {
+        .split-paths { grid-template-columns: 1fr; }
+    }
+    </style>
+</head>
+<body>
+
+<h1>Cronología de Nosgoth</h1>
+
+<div class="container" id="timeline">
+    <svg id="svg-layer"></svg>
+
+    <h2>Historia Original</h2>
+    <h3>Hace Eones</h3>
+    <div class="card">Guerra religiosa entre Alados y Hylden. Destierro de estos últimos.</div>
+    <div class="card">Maldición de inmortalidad y sed de sangre sobre los Alados.</div>
+    <div class="card">Vorador forja la Segadora de Sangre.</div>
+
+
+
+<div class="divergence-container">
+    <div class="divergence-header">
+        <span>⚔️ Convergencia de Segadoras</span>
+    </div>
+    
+    <p style="text-align: center; margin-bottom: 25px; font-style: italic;">
+        El flujo temporal se debilita. El destino se fractura en dos realidades:
+    </p>
+
+    <div class="split-paths">
+        <div class="path-card">
+            <span class="path-label">Línea Temporal A</span>
+            <strong>Derrota:</strong> Kain huye de regreso a su época original.
+        </div>
+
+        <div class="path-card" style="border-color: #f1e05a;">
+            <span class="path-label" style="color: #f1e05a;">Línea Temporal B</span>
+            <strong>Victoria:</strong> Kain mata a Guillermo y altera la historia. <span class="vortex-icon">🌀</span>
+        </div>
+    </div>
+</div>
+
+    <h3>470 años antes de Kain</h3>
+    <div class="card">
+        <div class="node blue" id="raziel-llegada">↓</div>
+        <strong>Llegada:</strong> Raziel Espectro emerge del futuro.
+    </div>
+    <div class="card">Muerte de Janos Audron a manos de los Sárafan.</div>
+    <div class="card deduced">Raziel entrega el corazón de Janos a Mortanius.</div>
+    <div class="card">Muerte de los comandantes Sárafan y nacimiento de la Segadora de Almas.</div>
+
+    <h3>20 años antes de Kain</h3>
+    <div class="card">
+        <div class="node red" id="kain-llegada">↓</div>
+        <strong>Llegada:</strong> Kain emerge huyendo de la Némesis.
+    </div>
+    <div class="card">Asesinato de Guillermo el Justo.</div>
+
+    <h3>Nacimiento de Kain</h3>
+    <div class="card">
+        <div class="node green" id="persecucion-llegada">↓</div>
+        <strong>Llegada:</strong> Raziel llega persiguiendo a Kain.
+    </div>
+    <div class="card">Ariel es asesinada y los Pilares se corrompen.</div>
+    <div class="card">
+        <div class="node blue" id="raziel-salida">↑</div>
+        <strong>Salida:</strong> Moebius envía a Raziel 500 años al pasado.
+    </div>
+
+    <h3>30 años después de Kain (Blood Omen)</h3>
+    <div class="card">Kain resucita como vampiro y busca venganza.</div>
+    <div class="card">
+        <div class="node red" id="kain-salida">↑</div>
+        <strong>Salida:</strong> Kain viaja 50 años al pasado para evitar a la Némesis.
+    </div>
+    <div class="card">Kain rechaza el sacrificio y condena a Nosgoth.</div>
+
+    <h3>Era de Soul Reaver (1000 años d.K.)</h3>
+    <div class="card">Kain levanta a sus hijos (Raziel, Turel, etc.) de la tumba Sárafan.</div>
+    <div class="card">Ejecución de Raziel y su despertar como espectro.</div>
+    <div class="card">
+        <div class="node green" id="persecucion-salida">↑</div>
+        <strong>Salida:</strong> Kain huye al pasado; Raziel entra tras él en el Cronoplasto.
+    </div>
+</div>
+
+<script>
+    function drawLines() {
+        const svg = document.getElementById('svg-layer');
+        svg.innerHTML = '';
+        const container = document.getElementById('timeline').getBoundingClientRect();
+
+        const paths = [
+            { from: 'raziel-salida', to: 'raziel-llegada', color: '#58a6ff' }, // Azul
+            { from: 'kain-salida', to: 'kain-llegada', color: '#ff7b72' },     // Rojo
+            { from: 'persecucion-salida', to: 'persecucion-llegada', color: '#7ee787' } // Verde
+        ];
+
+        paths.forEach(p => {
+            const start = document.getElementById(p.from).getBoundingClientRect();
+            const end = document.getElementById(p.to).getBoundingClientRect();
+
+            const x1 = start.left - container.left + 16;
+            const y1 = start.top - container.top + 16;
+            const x2 = end.left - container.left + 16;
+            const y2 = end.top - container.top + 16;
+
+            const newPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            // Curva lateral que rodea los textos
+            const d = `M ${x1} ${y1} C ${x1 - 180} ${y1}, ${x2 - 180} ${y2}, ${x2} ${y2}`;
+            
+            newPath.setAttribute("d", d);
+            newPath.setAttribute("stroke", p.color);
+            newPath.setAttribute("stroke-width", "4");
+            newPath.setAttribute("fill", "none");
+            newPath.setAttribute("stroke-dasharray", "10,5");
+            svg.appendChild(newPath);
+        });
+    }
+
+    // Dibujar al cargar y al cambiar tamaño
+    window.onload = drawLines;
+    window.onresize = drawLines;
+</script>
+</body>
+</html>
